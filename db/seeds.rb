@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Property.create(address: '719 Santa Cruz Avenue, Menlo Park, CA 94025', name: 'Oaks Plaza', price: '50')
