@@ -37,6 +37,9 @@ group :development do
   gem 'spring'
 
   gem 'annotate'
+  gem 'pry', '~> 0.13.1'
+  gem 'pry-rails'
+  gem 'awesome_print'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
