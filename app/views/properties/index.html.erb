@@ -11,18 +11,7 @@
       <% @properties.each do |property| %>
         <div class="p-4">
           <%= link_to property_path(property) do %>
-            <div class="block relative h-48 rounded overflow-hidden">
-              <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://star-name-registry.com/blog/images/d/0/1/f/a/d01faec7ef04415eec34c1bfe61913e167fb26c7-snr-blog-37-resized.jpg">
-            </div>
-            <div class="mt-4">
-              <h2 class="text-gray-900 title-font text-lg font-medium">
-                <%= property.name %>
-              </h2>
-              <h2 class="text-gray-500 title-font text-base font-medium">
-                <%= property.address %>
-              </h2>
-              <p class="mt-1"></p>
-            </div>
+            <%= render "property_card", property: property %>
           <% end %>
         </div>
       <% end %>
