@@ -1,8 +1,8 @@
-<%= form_with(model: property) do |form| %>
+<%= form_with(model: property, class: "flex w-full max-w-sm space-x-3") do |form| %>
   <% if property.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
-
+      <h2><%= pluralize(property.errors.count, "error") %>
+        prohibited this property from being saved:</h2>
       <ul>
         <% property.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,23 +10,13 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="flex flex-col mb-2">
+    <%= form.text_field :name, class: 'flex-1 mb-2 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent', placeholder: 'Name' %>
+    <%= form.text_field :address, class: 'flex-1 mb-2 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent', placeholder: 'Address' %>
+    <%= form.text_field :price, class: 'flex-1 mb-2 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent', placeholder: 'Price' %>
+    <div class="flex w-full mt-10">
+      <%= form.submit "Create Property", class: 'py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg' %>
+    </div>
   </div>
 <% end %>
+
