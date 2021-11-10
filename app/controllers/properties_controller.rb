@@ -8,6 +8,9 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1 or /properties/1.json
   def show
+    gmap_api_key = ENV.fetch('GOOGLE_MAPS_API_KEY') 
+    encoded_address = CGI.escape(@property.address)
+    @map_src = "https://www.google.com/maps/embed/v1/place?key=#{gmap_api_key}&q=#{encoded_address}" 
   end
 
   # GET /properties/new
